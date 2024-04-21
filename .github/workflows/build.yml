@@ -54,8 +54,8 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS
             -DGEODE_DONT_BUILD_TEST_MODS=ON
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=OFF
-            -DCURL_LIBRARY=$(realpath $GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/curl)
-            -DCURL_INCLUDE_DIR=$(realpath $GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/Headers)
+            -DCURL_LIBRARY=$GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/curl
+            -DCURL_INCLUDE_DIR=$GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/Headers
           package_cmd: 'echo "hiiiiiii :3"'
           installer_path: './no'
 
