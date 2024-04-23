@@ -54,8 +54,8 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS
             -DGEODE_DONT_BUILD_TEST_MODS=ON
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=OFF
-          package_cmd: 'echo "hiiiiiii :3"'
-          installer_path: './no'
+          package_cmd: ''
+          installer_path: ''
 
         - name: Android32
           os: ubuntu-latest
