@@ -53,6 +53,7 @@ jobs:
             -DCMAKE_BUILD_TYPE=Debug
             -DCMAKE_SYSTEM_NAME=iOS
             -DGEODE_DONT_BUILD_TEST_MODS=ON
+            -DGEODE_DISABLE_PRECOMPILED_HEADERS=OFF
           package_cmd: 'echo "hiiiiiii :3"'
           installer_path: './no'
 
