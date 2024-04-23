@@ -54,8 +54,6 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS
             -DGEODE_DONT_BUILD_TEST_MODS=ON
             -DGEODE_DISABLE_PRECOMPILED_HEADERS=OFF
-            -DCURL_LIBRARY=$GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/curl
-            -DCURL_INCLUDE_DIR=$GITHUB_WORKSPACE/curl.xcframework/ios-arm64/curl.framework/Headers
           package_cmd: 'echo "hiiiiiii :3"'
           installer_path: './no'
 
@@ -161,14 +159,6 @@ jobs:
         7z x llvm-inst.exe -ollvm bin/clang.exe bin/clang++.exe bin/lld-link.exe bin/llvm-rc.exe bin/*.dll lib/clang/*/include/*
         echo "$GITHUB_WORKSPACE/llvm/bin" >> $GITHUB_PATH
       if: matrix.config.id == 'win'
-
-    - name: Download iOS libcurl
-      shell: bash
-      run: |
-        curl -L https://github.com/tls-inspector/curl-ios/releases/download/8.7.1/curl.xcframework.zip -o curl.xcframework.zip
-        unzip curl.xcframework.zip
-        echo "$GITHUB_WORKSPACE/curl.xcframework"
-      if: matrix.config.id == 'ios'
 
     - name: Download CLI
       uses: robinraju/release-downloader@v1.9
