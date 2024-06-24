@@ -53,6 +53,7 @@ void CCFileUtils::updatePaths() {
     // add search paths that aren't in PATHS or PACKS to PATHS
     for (auto& path : m_searchPathArray) {
         std::filesystem::path const cocosPath = std::string(path);
+        log::info("cocos path: {}", cocosPath);
         bool isKnown = false;
         for (auto& pack : PACKS) {
             for (auto& packPath : pack.m_paths) {
@@ -68,6 +69,7 @@ void CCFileUtils::updatePaths() {
             for (auto& packPath : pack.m_paths) {
                 if (isPathEqual(cocosPath, packPath)) {
                     isKnown = true;
+                    log::info("known 1: {}", cocosPath);
                     break;
                 }
             }
@@ -77,10 +79,12 @@ void CCFileUtils::updatePaths() {
         for (auto& p : PATHS) {
             if (isPathEqual(cocosPath, p)) {
                 isKnown = true;
+                log::info("known 2: {}", cocosPath);
                 break;
             }
         }
         if (!isKnown) {
+            log::info("adding path: {}", cocosPath);
             PATHS.push_back(path);
         }
     }
