@@ -97,7 +97,8 @@ struct CustomLoadingLayer : Modify<CustomLoadingLayer, LoadingLayer> {
         this->setSmallText("Verifying Loader Resources");
         // verify loader resources
         Loader::get()->queueInMainThread([&]() {
-            if (!updater::verifyLoaderResources()) {
+            //if (!updater::verifyLoaderResources()) {
+            if (false) {
                 log::debug("Downloading Loader Resources");
                 this->setSmallText("Downloading Loader Resources");
                 this->addChild(EventListenerNode<updater::ResourceDownloadFilter>::create(
