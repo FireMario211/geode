@@ -323,6 +323,16 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
         // dunno if we can auto-create target directory on mobile, nor if the 
         // user has access to moving stuff there
 
+        // testing stuff
+        
+        FLAlertLayer::create(
+            "Texture alert",
+            fmt::format("geode resources dir: {}\nwritable path: {}\nwritable path 2: {}", geode::dirs::getGeodeResourcesDir().string(), CCFileUtils::sharedFileUtils()->getWritablePath(), CCFileUtils::sharedFileUtils()->getWritablePath2()),
+            "catgirl"
+        )->show();
+
+        return;
+
         FLAlertLayer::create(
             "Missing Textures",
             "You appear to be missing textures, and the automatic texture fixer "
