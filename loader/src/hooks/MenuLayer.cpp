@@ -56,7 +56,7 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
             );
             auto geodeBtnSelector = &CustomMenuLayer::onGeode;
             if (!m_fields->m_geodeButton) {
-                geodeBtnSelector = &CustomMenuLayer::onMissingTextures;
+                //geodeBtnSelector = &CustomMenuLayer::onMissingTextures;
                 m_fields->m_geodeButton = ButtonSprite::create("!!");
             }
 
